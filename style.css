@@ -33,7 +33,7 @@ window#waybar {
 
 #workspaces button {
   padding: 0 2px;
-  color: #adf6e3;
+  color: #d3abe3;
 }
 #workspaces button.focused {
   color: #268bd2;
