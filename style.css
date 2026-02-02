@@ -18,6 +18,13 @@ window#waybar {
   background: #1a1a1a;
 }
 
+#custom-timer {
+  background-color: #f82a36;
+  color: #f8f8f2;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
 #workspaces,
 #clock.1,
 #clock.2,

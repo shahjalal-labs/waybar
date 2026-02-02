@@ -7,7 +7,8 @@
 	"modules-left": [
 		"hyprland/workspaces",
 		"hyprland/window",
-		"custom/right-arrow-dark"
+		"custom/right-arrow-dark",
+    "custom/timer"
 	],
 	"modules-center": [
 		"custom/left-arrow-dark",
@@ -52,6 +53,12 @@
 		"format": "",
 		"tooltip": false
 	},
+  "custom/timer": {
+        "format": "{} ⏳",  // Shows the time with a timer icon (customize or remove icon)
+        "exec": "~/.config/hypr/shellscript/waybar/waybar-timer.sh",
+        "interval": 1,  // Update every second for smooth countdown
+        "tooltip": false  // Optional: no hover info
+    },
 	"custom/right-arrow-light": {
 		"format": "",
 		"tooltip": false
