@@ -1,78 +1,272 @@
-# waybarFullContent.md
-
-## 🌲 Full Project Structure
-
-```bash
-/home/sj/.config/waybar
-├── config
-├── README.md
-├── structure.md
-└── style.css
-
-1 directory, 4 files
-```
-
-## 📁 waybar Module Tree
-
-```bash
-/home/sj/.config/waybar
-├── config
-├── README.md
-├── structure.md
-└── style.css
-
-1 directory, 4 files
-```
-
-## 📋 schema.prisma
-
-```prisma
-```
-
-## 📦 package.json
-
-```json
-```
-
-## 📖 README.md
-
-```markdown
-# 🌟 waybar
-
-## 📂 Project Information
-
-| 📝 **Detail**           | 📌 **Value**                                                              |
-|------------------------|---------------------------------------------------------------------------|
-| 🔗 **GitHub URL**       | [https://github.com/shahjalal-labs/waybar](https://github.com/shahjalal-labs/waybar)                                                                  |
-| 🌐 **Live Site**        | [http://shahjalal-mern.surge.sh](http://shahjalal-mern.surge.sh)                                                                  |
-| 💻 **Portfolio GitHub** | [https://github.com/shahjalal-labs/shahjalal-portfolio-v2](https://github.com/shahjalal-labs/shahjalal-portfolio-v2)                                                                  |
-| 🌐 **Portfolio Live**   | [http://shahjalal-labs.surge.sh](http://shahjalal-labs.surge.sh)                                                                  |
-| 📁 **Directory**        | `/home/sj/.config/waybar`                                                                      |
-| 📅 **Created On**       | `10/10/2025 09:01 AM Fri GMT+6`                                                                      |
-| 📍 **Location**         | Sharifpur, Gazipur, Dhaka                                                                        |
-| 💼 **LinkedIn**         | [https://www.linkedin.com/in/shahjalal-labs/](https://www.linkedin.com/in/shahjalal-labs/)                                                                  |
-| 📘 **Facebook**         | [https://www.facebook.com/shahjalal.labs](https://www.facebook.com/shahjalal.labs)                                                                  |
-| ▶️ **Twitter**          | [https://x.com/shahjalal_labs](https://x.com/shahjalal_labs)                                                                  |
-
----
-### `Developer info:`
-![Developer Info:](https://i.ibb.co/kVR4YmrX/developer-Info-Github-Banner.png)
-
-> 🚀 
-> 🧠 
-```
-
-## 📖 structure.md
-
-```markdown
 # 📁 Project Structure
 
 ```bash
 .
 ├── config
-└── style.css
+├── README.md
+├── structure.md
+├── style.css
 
-1 directory, 2 files
 
 ```
+
+> /home/sj/.config/waybar/config
+
+```config
+// -*- mode: json -*-
+
+{
+	"layer": "bottom",
+	"position": "bottom",
+
+	"modules-left": [
+		"hyprland/workspaces",
+		"hyprland/window",
+		"custom/right-arrow-dark",
+    "custom/timer"
+	],
+	"modules-center": [
+		"custom/left-arrow-dark",
+		"clock#1",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"clock#2",
+		"custom/right-arrow-dark",
+		"custom/right-arrow-light",
+		"clock#3",
+		"custom/right-arrow-dark"
+	],
+	"modules-right": [
+		"custom/left-arrow-dark",
+		"pulseaudio",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"memory",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"cpu",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"battery",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"disk",
+		"custom/left-arrow-light",
+		"custom/left-arrow-dark",
+		"tray"
+	],
+
+	"custom/left-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/left-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+	"custom/right-arrow-dark": {
+		"format": "",
+		"tooltip": false
+	},
+  "custom/timer": {
+        "format": "{} ⏳",  // Shows the time with a timer icon (customize or remove icon)
+        "exec": "~/.config/hypr/shellscript/waybar/waybar-timer.sh",
+        "interval": 1,  // Update every second for smooth countdown
+        "tooltip": false  // Optional: no hover info
+    },
+	"custom/right-arrow-light": {
+		"format": "",
+		"tooltip": false
+	},
+
+	"hyprland/workspaces": {
+		"disable-scroll": false,
+		"all-outputs": true,
+		"format": "{icon}",
+		"format-icons": {
+			"default": "",
+			"active": "",
+			"urgent": ""
+		},
+		"on-click": "activate",
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1"
+	},
+
+	"hyprland/window": {
+		"format": "{}",
+		"format-alt": "{}",
+		"separator": false,
+		"max-length": 30,
+		"rewrite": {
+			"(.*) - Mozilla Firefox": "🌐 $1",
+			"(.*) - Google Chrome": "🌐 $1",
+			"Alacritty": "💻 Terminal",
+			"kitty": "💻 Terminal",
+			"Thunar": "📁 Files",
+			"nautilus": "📁 Files",
+			"Code": "⚡ Code",
+			"nvim": "✏️ Neovim",
+			"Neovim": "✏️ Neovim"
+		},
+		"tooltip": false
+	},
+
+	"clock#1": {
+		"format": "{:%a}",
+		"tooltip": false
+	},
+	"clock#2": {
+		"format": "{:%I:%M}",
+		"tooltip": false
+	},
+	"clock#3": {
+		"format": "{:%m-%d}",
+		"tooltip": false
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume:2}%",
+		"format-bluetooth": "{icon}  {volume}%",
+		"format-muted": "MUTE",
+		"format-icons": {
+			"headphones": "",
+			"default": [
+				"",
+				""
+			]
+		},
+		"scroll-step": 5,
+		"on-click": "pamixer -t",
+		"on-click-right": "pavucontrol"
+	},
+	"memory": {
+		"interval": 5,
+		"format": "Mem {}%",
+		"tooltip": true,
+		"on-click": "alacritty -e htop"
+	},
+	"cpu": {
+		"interval": 5,
+		"format": "CPU {usage:2}%",
+		"tooltip": true,
+		"on-click": "alacritty -e htop"
+	},
+	"battery": {
+		"states": {
+			"good": 95,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			""
+		],
+		"tooltip": true
+	},
+	"disk": {
+		"interval": 5,
+		"format": "Disk {percentage_used:2}%",
+		"path": "/",
+		"tooltip": true,
+		"on-click": "thunar"
+	},
+	"tray": {
+		"icon-size": 20,
+		"spacing": 8
+	}
+}
+
+```
+
+> /home/sj/.config/waybar/style.css
+
+```css
+* {
+  font-size: 20px;
+  font-family: monospace;
+}
+
+window#waybar {
+  background: #292b2e;
+  color: #fdf6e3;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+  color: #1a1a1a;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+  color: #292b2e;
+  background: #1a1a1a;
+}
+
+#custom-timer {
+  background-color: #f82a36;
+  color: #f8f8f2;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray {
+  background: #1a1a1a;
+}
+
+#workspaces button {
+  padding: 0 2px;
+  color: #d3abe3;
+}
+#workspaces button.focused {
+  color: #268bd2;
+}
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+#workspaces button:hover {
+  background: #1a1a1a;
+  border: #1a1a1a;
+  padding: 0 3px;
+}
+
+#pulseaudio {
+  color: #268bd2;
+}
+#memory {
+  color: #2aa198;
+}
+#cpu {
+  color: #6c71c4;
+}
+#battery {
+  color: #859900;
+}
+#disk {
+  color: #b58900;
+}
+
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk {
+  padding: 0 10px;
+}
 ```

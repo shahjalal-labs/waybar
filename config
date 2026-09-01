@@ -8,7 +8,8 @@
 		"hyprland/workspaces",
 		"hyprland/window",
 		"custom/right-arrow-dark",
-    "custom/timer"
+    "custom/timer",
+    "custom/kanata-mode"
 	],
 	"modules-center": [
 		"custom/left-arrow-dark",
@@ -59,6 +60,14 @@
         "interval": 1,  // Update every second for smooth countdown
         "tooltip": false  // Optional: no hover info
     },
+
+    "custom/kanata-mode": {
+    "format": "{}",
+    "exec": "cat /tmp/kanata_mode 2>/dev/null || echo NORM",
+    "interval": 1,
+    "tooltip": false
+},
+
 	"custom/right-arrow-light": {
 		"format": "",
 		"tooltip": false
