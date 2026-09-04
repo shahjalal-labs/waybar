@@ -5,9 +5,8 @@
 ├── config
 ├── README.md
 ├── structure.md
-├── style.css
-└── waybarFullContent.md
+└── style.css
 
-1 directory, 5 files
+1 directory, 4 files
 
 ```
