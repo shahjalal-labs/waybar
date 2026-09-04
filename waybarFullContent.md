@@ -23,7 +23,10 @@
 		"hyprland/workspaces",
 		"hyprland/window",
 		"custom/right-arrow-dark",
-    "custom/timer"
+    "custom/timer",
+    "custom/kanata-mode",
+    "custom/age",
+    "custom/smt"
 	],
 	"modules-center": [
 		"custom/left-arrow-dark",
@@ -74,6 +77,30 @@
         "interval": 1,  // Update every second for smooth countdown
         "tooltip": false  // Optional: no hover info
     },
+
+    "custom/kanata-mode": {
+    "format": "{}",
+    "exec": "cat /tmp/kanata_mode 2>/dev/null || echo NORM",
+    "interval": 1,
+    "tooltip": false
+},
+
+	"custom/age": {
+		"format": "{}",
+		"return-type": "json",
+		"exec": "~/.config/hypr/shellscript/waybar/duration_tracker.py age",
+		"interval": 60,
+		"tooltip": true
+	},
+
+	"custom/smt": {
+		"format": "{}",
+		"return-type": "json",
+		"exec": "~/.config/hypr/shellscript/waybar/duration_tracker.py smt",
+		"interval": 60,
+		"tooltip": true
+	},
+
 	"custom/right-arrow-light": {
 		"format": "",
 		"tooltip": false
@@ -117,11 +144,12 @@
 		"tooltip": false
 	},
 	"clock#2": {
-		"format": "{:%I:%M}",
+		"interval": 1,
+		"format": "{:%I:%M:%S}",
 		"tooltip": false
 	},
 	"clock#3": {
-		"format": "{:%m-%d}",
+		"format": "{:%d-%m-%y}",
 		"tooltip": false
 	},
 
@@ -182,7 +210,6 @@
 		"spacing": 8
 	}
 }
-
 ```
 
 > /home/sj/.config/waybar/style.css
@@ -213,6 +240,32 @@ window#waybar {
   color: #f8f8f2;
   padding: 0 10px;
   border-radius: 5px;
+}
+
+#custom-kanata-mode {
+  background-color: #6c71c4;
+  color: #f8f8f2;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#custom-age {
+  background-color: #2aa198;
+  color: #f8f8f2;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+#custom-smt {
+  background-color: #859900;
+  color: #f8f8f2;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 5px;
 }
 
 #workspaces,

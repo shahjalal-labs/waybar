@@ -9,7 +9,9 @@
 		"hyprland/window",
 		"custom/right-arrow-dark",
     "custom/timer",
-    "custom/kanata-mode"
+    "custom/kanata-mode",
+    "custom/age",
+    "custom/smt"
 	],
 	"modules-center": [
 		"custom/left-arrow-dark",
@@ -68,6 +70,22 @@
     "tooltip": false
 },
 
+	"custom/age": {
+		"format": "{}",
+		"return-type": "json",
+		"exec": "~/.config/hypr/shellscript/waybar/duration_tracker.py age",
+		"interval": 60,
+		"tooltip": true
+	},
+
+	"custom/smt": {
+		"format": "{}",
+		"return-type": "json",
+		"exec": "~/.config/hypr/shellscript/waybar/duration_tracker.py smt",
+		"interval": 60,
+		"tooltip": true
+	},
+
 	"custom/right-arrow-light": {
 		"format": "",
 		"tooltip": false
@@ -111,11 +129,12 @@
 		"tooltip": false
 	},
 	"clock#2": {
-		"format": "{:%I:%M}",
+		"interval": 1,
+		"format": "{:%I:%M:%S}",
 		"tooltip": false
 	},
 	"clock#3": {
-		"format": "{:%m-%d}",
+		"format": "{:%d-%m-%y}",
 		"tooltip": false
 	},
 
