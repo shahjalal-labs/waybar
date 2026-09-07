@@ -25,6 +25,7 @@
 		"custom/right-arrow-dark"
 	],
 	"modules-right": [
+		"custom/recording",
 		"custom/left-arrow-dark",
 		"pulseaudio",
 		"custom/left-arrow-light",
@@ -84,6 +85,14 @@
 		"exec": "~/.config/hypr/shellscript/waybar/duration_tracker.py smt",
 		"interval": 60,
 		"tooltip": true
+	},
+
+	"custom/recording": {
+		"format": "{}",
+		"exec": "cat /tmp/voice_dictation.status 2>/dev/null",
+		"interval": 1,
+		"signal": 11,
+		"tooltip": false
 	},
 
 	"custom/right-arrow-light": {

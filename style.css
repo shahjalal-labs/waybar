@@ -51,6 +51,15 @@ window#waybar {
   margin-left: 5px;
 }
 
+#custom-recording {
+  background-color: #f82a36;
+  color: #ffffff;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
 #workspaces,
 #clock.1,
 #clock.2,
