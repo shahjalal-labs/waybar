@@ -1,5 +1,5 @@
 * {
-  font-size: 20px;
+  font-size: 18px;
   font-family: monospace;
 }
 
@@ -106,11 +106,41 @@ window#waybar {
   color: #b58900;
 }
 
+#clock.1 {
+  color: #bb9af7;
+  font-weight: bold;
+}
+
+#clock.2 {
+  color: #7dcfff;
+  font-weight: bold;
+}
+
+#clock.3 {
+  color: #ff79c6;
+  font-weight: bold;
+}
+
 #clock,
 #pulseaudio,
 #memory,
 #cpu,
 #battery,
-#disk {
+#disk,
+#tray {
   padding: 0 10px;
+}
+
+#tray {
+  margin-right: 6px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #ff79c6;
+  border-radius: 4px;
 }
